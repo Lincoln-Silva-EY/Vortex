@@ -18,10 +18,9 @@ export default observer(function NavBar() {
                         <>
                             <Button
                                 as={NavLink} to='/createHero'
-                                content="Create Hero"
+                                content="Create"
                                 style={{ marginRight: "1vw" }} positive color='green'
                             />
-                            <Button as={Link} to={`/profile/${user?.username}`} inverted content="Profile" style={{ marginRight: "1vw" }} />
                             <Button onClick={logout} inverted content="Logout" style={{ marginRight: "1vw" }} />
                             Welcome {user?.displayName}
                         </>
