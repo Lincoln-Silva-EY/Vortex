@@ -32,6 +32,7 @@ export default class HeroStore {
         this.loadingInitial = true;
         try {
             const heroes = await agent.Heroes.list();
+            heroes.sort();
             runInAction(() => {
                 heroes.forEach(hero => {
                     this.setHero(hero);

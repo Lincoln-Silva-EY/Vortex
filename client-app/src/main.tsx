@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.min.css'
 import { store, StoreContext } from './app/stores/store'
 import { Router } from "react-router-dom";
 import { createBrowserHistory } from 'history';
+import ScrollTop from './app/layout/ScrollTop';
 
 
 export const history = createBrowserHistory();
@@ -13,6 +14,7 @@ export const history = createBrowserHistory();
 ReactDOM.render(
     <StoreContext.Provider value={store}>
       <Router history={history}>
+       <ScrollTop />
         <App />
       </Router>
     </StoreContext.Provider>,
