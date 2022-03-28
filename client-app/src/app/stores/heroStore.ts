@@ -13,7 +13,7 @@ export default class HeroStore {
     constructor() {
         makeAutoObservable(this);
     }
-    
+
     get heroSort() {
         return Array.from(this.heroRegistry.values()).sort();
     }
@@ -109,6 +109,22 @@ export default class HeroStore {
             console.log(error);
             runInAction(() => {
                 this.loading = false
+            })
+        }
+    }
+
+    deleteHero = async (id: string) => {
+        this.loading = true;
+        try {
+            await agent.Heroes.delete(id);
+            runInAction(() => {
+                this.heroRegistry.delete(id);
+                this.loading = false;
+            })
+        } catch (error) {
+            console.log(error);
+            runInAction(() => {
+                this.loading = false;
             })
         }
     }

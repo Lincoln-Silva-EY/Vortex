@@ -40,7 +40,8 @@ const Heroes = {
     list: () => requests.get<Hero[]>('/heroes'),
     details: (id: string) => requests.get<Hero>(`/heroes/${id}`),
     create: (hero: Hero) => requests.post('/heroes', hero),
-    update: (hero: Hero) => requests.put<void>(`/heroes/${hero.id}`, hero)
+    update: (hero: Hero) => requests.put<void>(`/heroes/${hero.id}`, hero),
+    delete: (id: string) => requests.del<void>(`/heroes/${id}`)
 }
 
 const Account = {

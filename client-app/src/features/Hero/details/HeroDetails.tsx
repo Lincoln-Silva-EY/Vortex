@@ -1,13 +1,14 @@
 import { observer } from "mobx-react-lite";
-import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { Button, Divider, Grid, Header, Item, Segment } from "semantic-ui-react";
+import agent from "../../../app/api/agent";
 import LoadingComponent from "../../../app/layout/LoadingComponent";
 import { useStore } from "../../../app/stores/store";
 
 export default observer(function HeroDetalis() {
     const { heroStore } = useStore();
-    const { selectedHero: hero, loadHero, loadingInitial } = heroStore;
+    const { selectedHero: hero, loadHero, loadingInitial, deleteHero} = heroStore;
     const { id } = useParams<{ id: string }>();
     const { userStore } = useStore();
     useEffect(() => {
@@ -35,17 +36,16 @@ export default observer(function HeroDetalis() {
                                             </Header>
                                         </Item.Content>
                                         <Item.Content>
-                                        {userStore.isLoggedIn ? (
+                                            {userStore.isLoggedIn ? (
                                                 <>
-
-                                                    <Button.Group>
-                                                        <Button style={{ width: '12em' }} as={Link} to={`/manage/${hero.id}`} color='blue' content='Edit' />
-                                                        <Button style={{ width: '12em' }} as={Link} to={'/'} color='red' content='Cancel' />
-                                                    </Button.Group>
-
+                                                    
+                                                        <Button style={{ width: '8em' }} as={Link} to={`/manage/${hero.id}`} color='green' content='Edit' />
+                                                        <Button style={{ width: '8em' }} as={Link} to={'/'} onClick={() => deleteHero(hero.id)} color='red' content='Delete' />
+                                                        <Button style={{ width: '8em' }} as={Link} to={'/'} color='blue' content='Return' />
+                                                    
                                                 </>
                                             ) : (
-                                                <Button style={{ width: '12em' }} as={Link} to={'/'} color='red' content='Cancel' />
+                                                <Button style={{ width: '12em' }} as={Link} to={'/'} color='blue' content='Return' />
                                             )}
                                         </Item.Content>
                                     </Item>
@@ -62,8 +62,8 @@ export default observer(function HeroDetalis() {
                                     <Header icon='magic' content={`${hero.name}'s Powers`} />
                                 </Item.Content>
                             </Item>
-                            </Grid.Row>
-                            <Grid.Row>
+                        </Grid.Row>
+                        <Grid.Row>
                             <Item style={{ marginTop: '1em' }}>
                                 <Item.Content verticalAlign="middle">
                                     <span style={{ whiteSpace: 'pre-wrap' }}>{hero.powers}</span>

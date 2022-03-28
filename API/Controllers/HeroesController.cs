@@ -32,7 +32,7 @@ namespace API.Controllers
             hero.Id = id;
             return Ok(await Mediator.Send(new Edit.Command { Hero = hero }));
         }
-
+        [AllowAnonymous]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHero(Guid id)
         {

@@ -6,6 +6,7 @@ export const genderOptions = [
 
 export const raceOptions = [
     { text: 'Human', value: 'Human' },
+    { text: 'Unhuman', value: 'unHuman' },
     { text: 'Undefined', value: 'Undefined' }
 ]
 
@@ -17,8 +18,6 @@ export const alignmentOptions = [
 ]
 
 export const universeOptions = [
-    { text: 'DC', value: 'DC' },
-    { text: 'Marvel', value: 'Marvel' },
     { text: 'Avatar - Avatar: The Last Airbender(2005-2008) and The Legend of Korra(2012-2014)', value: 'Avatar - Avatar: The Last Airbender(2005-2008) and The Legend of Korra(2012-2014)' },
     { text: 'Bayonetta - Bayonetta Universe', value: 'Bayonetta - Bayonetta Universe' },
     { text: 'Ben 10', value: 'Ben 10' },
