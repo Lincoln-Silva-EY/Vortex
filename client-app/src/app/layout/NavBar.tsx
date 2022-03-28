@@ -10,7 +10,7 @@ export default observer(function NavBar() {
         <Menu fixed="top" inverted style={{ backgroundColor: '#29ABE2', height: '10vh' }}>
             <Container>
                 <Menu.Item as={NavLink} to='/' exact header>
-                    <img style={{height:'5em', width:'5em'}} src='/assets/logo.png' alt="logo" /> <b style={{marginLeft:'0.8em', fontSize:'1.5em'}}>Vortex</b>
+                    <img style={{height:'4em', width:'4em'}} src='/assets/logo.png' alt="logo" /> <b style={{marginLeft:'0.8em', fontSize:'1.5em'}}>The Vortex</b>
                 </Menu.Item>
                 <Menu.Item position="right">
 
