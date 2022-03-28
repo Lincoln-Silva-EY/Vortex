@@ -18,6 +18,7 @@ export const alignmentOptions = [
 ]
 
 export const universeOptions = [
+    { text: 'Pokemon - Pokemon', value: 'Pokemon - Pokemon' },
     { text: 'Avatar - Avatar: The Last Airbender(2005-2008) and The Legend of Korra(2012-2014)', value: 'Avatar - Avatar: The Last Airbender(2005-2008) and The Legend of Korra(2012-2014)' },
     { text: 'Bayonetta - Bayonetta Universe', value: 'Bayonetta - Bayonetta Universe' },
     { text: 'Ben 10', value: 'Ben 10' },
@@ -72,7 +73,6 @@ export const universeOptions = [
     { text: 'Ninjago - Ninjago', value: 'Ninjago - Ninjago' },
     { text: 'OPM - One Punch Man', value: 'OPM - One Punch Man' },
     { text: 'PJO - Percy Jackson & the Olympians', value: 'PJO - Percy Jackson & the Olympians' },
-    { text: 'Pokemon - Pokemon', value: 'Pokemon - Pokemon' },
     { text: 'Prime Earth - Prime DC Comics Universe', value: 'Prime Earth - Prime DC Comics Universe' },
     { text: 'Queen Metroid', value: 'Queen Metroid' },
     { text: 'Rebirth - DC-Rebirth', value: 'Rebirth - DC-Rebirth' },
